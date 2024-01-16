@@ -76,7 +76,7 @@ To run the project, you'll need to have the following Python packages installed.
 
 ```bash
 
-pip  install  scikit-learn  scipy  pandas  numpy  matplotlib  seaborn scikit-surprise
+pip install scikit-learn scipy pandas numpy matplotlib seaborn scikit-surprise
 
 ```
 
