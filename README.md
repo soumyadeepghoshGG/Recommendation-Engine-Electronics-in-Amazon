@@ -1,4 +1,3 @@
-
 # Introduction to Recommendation systems
 Recommendation systems, also known as recommendation engines, are algorithms designed to suggest relevant items to users. In this modern world we are overloaded with data and content but everything is not relevant to a person. Recommendation systems try to understand a person's preferences and behavior, to provide personalized recommendations.
 <p>Recommendation systems are widely used in media platforms like Netflix to suggest movies and TV shows, Spotify to suggest music, and e-commerce sites like Amazon to suggest products to customers. </p>
@@ -9,20 +8,27 @@ Recommendation systems, also known as recommendation engines, are algorithms des
 3. It helps the item providers to deliver the items to the right user. In Amazon, 35% products get sold due to recommendation.
 4. It helps to make the contents more personalized. In Netflix most of the rented movies are from recommendations.
 
-# Types of recommendation systems:
+# Types of recommendation systems
 
 ## Collaborative Filtering
 Collaborative filtering primarily relies on recorded **user-item interactions** to make recommendations. The core idea is to identify patterns and similarities among users based on their historical interactions with items. By leveraging this collective wisdom, the system can suggest items to a user based on the preferences of users who have shown similar behaviors or liked similar items in the past. It's effective when there's a substantial <u><i>user-item interaction history</u></i>. For example when we want to find a new movie to watch we’ll often ask our friends who share tastes similar to our own for recommendations.
-<u><b>User-Based:</u></b> In this approach, the system identifies groups of users with similar preferences. If User A and User B have similar tastes, the system might recommend items to User A that User B bought or interacted with, and vice versa. For Example 'My Recommendations' section in Amazon displays recommended products based on our: past purchases and past interactions (visited products not yet purchased, search history, and so on)
+
+### Memory-Based Collaborative Filtering
+- <u><b>User-Based:</u></b> It focuses on identifying users similar to the target user. If User A and User B have similar tastes, the system might recommend items to User A that User B bought or interacted with, and vice versa. For Example 'My Recommendations' section in Amazon displays recommended products based on our: past purchases and past interactions (visited products not yet purchased, search history, and so on)
 
 ![User-Based Collaborative Filtering](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567dd5e53d12f2bd1575_MeXlYz3B3hDgwKRyxKgt5E81tZrjGAJnRamktIFrBVn6vZt0NyK50a4MyS6WxP0Xy3E8CJPdAISoxxfiepg_nYKJQ9C4jovZhTClir3ljw_uAgqb9yZZv1Ksy7WZsAiUAW48mcFVvJTo8SlJSQ.png)
 
-<u><b>Item-Based:</u></b> This approach focuses on the similarities between items rather than users. If User A liked Item X, and Item Y is similar to Item X based on user preferences, the system might recommend Item Y to User A. For Example, on visiting the product page for an Oculus VR headset, Amazon displays the following recommendations after the product information:
+- <u><b>Item-Based:</u></b> It recommends items similar to those the user has interacted with. This approach focuses on the similarities between items rather than users. If User A liked Item X, and Item Y is similar to Item X based on user preferences (not item features), the system might recommend Item Y to User A. For Example, on visiting the product page for an Oculus VR headset, Amazon displays the following recommendations after the product information:
 
 ![Item-Based Collaborative Filtering 1](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567d699bda76d85c3f34_e4KkDVFSVE_J58_sFhtcG72Veg7eNymtDpgc0DYhk-yg3tJM1g9gqpGed08F4SMeDWOvUYpJSlV-g4uL3wUizBHS7lVbwFtH9RcOF2TKVntJqE3stTi6IlKaRC0OnXR-5QvgIp0cbbZ3J3dQNQ.png)
 
 ![Item-Based Collaborative Filtering 1](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567d003405907a14ccfe_hBFSRGTivdpH1hyf246uwK2wSjQ2BhHUXTdly-VK_flufNHyCkwlO-1b1f69wT5P0RD-CXYbCL9f2g1CS4Rf8xdwFdWChInvE6ju_iFmmRqwa0IsNUSPuIqwng_SrDPXn6bTEJvMYQ6_Fx7X7A.png)
- 
+
+### Memory-Based Collaborative Filtering
+User-User and Item-Item Collaborative Filtering are memory-based methods entire user-item interaction history to make predictions. Model-based filtering utilizes a machine learning model to use past data and learn the underlying patterns and relationships. 
+</p>Common techniques include matrix factorization, clustering, and various supervised learning approaches. Singular Value Decomposition (SVD) is a technique of matrix factorization, and it is employed to factorize the user-item interaction matrix into latent factors, allowing the system to predict missing values and recommend items based on learned user preferences.
+</p>
+<p><b>Pros:</b> Model-based approaches offer advantages in scalability, as they can handle large sparse matrices efficiently. These methods are particularly useful in scenarios where direct user-user or item-item similarity computations become impractical due to the scale of the dataset. Moreover, they mitigate the "cold start" problem to some extent, making them suitable for new users or items.</p>
 
 **Pros of Collaborative Filtering:**
 -  *Personalization:* Provides personalized recommendations which enhances the user experience.
