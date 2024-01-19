@@ -110,7 +110,7 @@ The Amazon dataset contains the following attributes:
 
 # License
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/soumyadeepghoshGG/Recommendation%20Engine%20-%20Electronics%20in%20Amazon/blob/main/License.txt) file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/soumyadeepghoshGG/Recommendation-Engine-Electronics-in-Amazon/blob/main/License.txt) file for details.
 
 
 # Contact
