@@ -10,25 +10,23 @@ Recommendation systems, also known as recommendation engines, are algorithms des
 
 # Types of recommendation systems
 
-## Collaborative Filtering
+## 1. Collaborative Filtering
 Collaborative filtering primarily relies on recorded **user-item interactions** to make recommendations. The core idea is to identify patterns and similarities among users based on their historical interactions with items. By leveraging this collective wisdom, the system can suggest items to a user based on the preferences of users who have shown similar behaviors or liked similar items in the past. It's effective when there's a substantial <u><i>user-item interaction history</u></i>. For example when we want to find a new movie to watch we’ll often ask our friends who share tastes similar to our own for recommendations.
 
-### Memory-Based Collaborative Filtering
-- <u><b>User-Based:</u></b> It focuses on identifying users similar to the target user. If User A and User B have similar tastes, the system might recommend items to User A that User B bought or interacted with, and vice versa. For Example 'My Recommendations' section in Amazon displays recommended products based on our: past purchases and past interactions (visited products not yet purchased, search history, and so on)
+### 1.1 Memory-Based Collaborative Filtering
+**1.1.1 User-Based Collaborative Filtering:** It focuses on identifying users similar to the target user. If User A and User B have similar tastes, the system might recommend items to User A that User B bought or interacted with, and vice versa. For Example 'My Recommendations' section in Amazon displays recommended products based on our: past purchases and past interactions (visited products not yet purchased, search history, and so on)
 
 ![User-Based Collaborative Filtering](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567dd5e53d12f2bd1575_MeXlYz3B3hDgwKRyxKgt5E81tZrjGAJnRamktIFrBVn6vZt0NyK50a4MyS6WxP0Xy3E8CJPdAISoxxfiepg_nYKJQ9C4jovZhTClir3ljw_uAgqb9yZZv1Ksy7WZsAiUAW48mcFVvJTo8SlJSQ.png)
 
-- <u><b>Item-Based:</u></b> It recommends items similar to those the user has interacted with. This approach focuses on the similarities between items rather than users. If User A liked Item X, and Item Y is similar to Item X based on user preferences (not item features), the system might recommend Item Y to User A. For Example, on visiting the product page for an Oculus VR headset, Amazon displays the following recommendations after the product information:
+**1.1.2 Item-Based Collaborative Filtering:** It recommends items similar to those the user has interacted with. This approach focuses on the similarities between items rather than users. If User A liked Item X, and Item Y is similar to Item X based on user preferences (not item features), the system might recommend Item Y to User A. For Example, on visiting the product page for an Oculus VR headset, Amazon displays the following recommendations after the product information:
 
 ![Item-Based Collaborative Filtering 1](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567d699bda76d85c3f34_e4KkDVFSVE_J58_sFhtcG72Veg7eNymtDpgc0DYhk-yg3tJM1g9gqpGed08F4SMeDWOvUYpJSlV-g4uL3wUizBHS7lVbwFtH9RcOF2TKVntJqE3stTi6IlKaRC0OnXR-5QvgIp0cbbZ3J3dQNQ.png)
 
 ![Item-Based Collaborative Filtering 1](https://assets-global.website-files.com/60f03643ffba6a48a3bda298/6283567d003405907a14ccfe_hBFSRGTivdpH1hyf246uwK2wSjQ2BhHUXTdly-VK_flufNHyCkwlO-1b1f69wT5P0RD-CXYbCL9f2g1CS4Rf8xdwFdWChInvE6ju_iFmmRqwa0IsNUSPuIqwng_SrDPXn6bTEJvMYQ6_Fx7X7A.png)
 
-### Memory-Based Collaborative Filtering
-User-User and Item-Item Collaborative Filtering are memory-based methods entire user-item interaction history to make predictions. Model-based filtering utilizes a machine learning model to use past data and learn the underlying patterns and relationships. 
-</p>Common techniques include matrix factorization, clustering, and various supervised learning approaches. Singular Value Decomposition (SVD) is a technique of matrix factorization, and it is employed to factorize the user-item interaction matrix into latent factors, allowing the system to predict missing values and recommend items based on learned user preferences.
-</p>
-<p><b>Pros:</b> Model-based approaches offer advantages in scalability, as they can handle large sparse matrices efficiently. These methods are particularly useful in scenarios where direct user-user or item-item similarity computations become impractical due to the scale of the dataset. Moreover, they mitigate the "cold start" problem to some extent, making them suitable for new users or items.</p>
+### 1.2 Model-Based Collaborative Filtering
+User-User and Item-Item Collaborative Filtering are memory-based methods which require entire user-item interaction history to make predictions. Model-based filtering on the other hand utilizes machine learning models like SVD to use past data and learn the underlying patterns and relationships. Singular Value Decomposition (SVD) is a technique of matrix factorization, which can factorize the user-item interaction matrix into latent factors, allowing the system to predict missing values and recommend items based on learned user preferences.
+<p>Model-based approaches offer advantages in scalability, as they can handle large sparse matrices efficiently. These methods are particularly useful in scenarios where direct user-user or item-item similarity computations become impractical due to the scale of the dataset. Moreover, they mitigate the "cold start" problem to some extent, making them suitable for new users or items.</p>
 
 **Pros of Collaborative Filtering:**
 -  *Personalization:* Provides personalized recommendations which enhances the user experience.
@@ -42,7 +40,7 @@ User-User and Item-Item Collaborative Filtering are memory-based methods entire 
 -  *Popularity Bias:* Tends to recommend popular items more frequently, leading to a bias toward well-known or mainstream items.
 -  *Scalability:* As the number of users and items grows, the computational complexity of finding similar users or items increases.
 
-## Content-Based Filtering
+## 2. Content-Based Filtering
 Content-based filtering relies on extracting **relevant features** from items. These features could include textual content, keywords, genres, or any other attributes that describe the item's nature. Each user has a profile which is created by analyzing the features of items they have liked or interacted with. Content-based systems recommend items whose features match the user's profile. Platforms like Netflix analyze movie attributes (genres, directors, actors) to recommend films similar to ones users have enjoyed. Also, services like Spotify suggest songs based on genre, artist preferences, and even specific musical attributes like tempo or mood.
 
 <p>Content-based filtering creates a profile for each user based on their preferences and interactions with items. But if the user is completely new there are some ways in which content-based systems handle this situation. It can prompt new users to explicitly specify their preferences or interests during the onboarding process (for example: Spotify). It might initialize a new user's profile with default or general preferences according to the demographic (for example: YouTube).The cold start problem is a challenge not only for collaborative filtering but also for content-based filtering, especially when dealing with completely new users who have not yet provided any interaction history.</p>
@@ -58,7 +56,7 @@ Content-based filtering relies on extracting **relevant features** from items. T
 -  *Dependency on Rich Item Descriptions:* The performance of content-based filtering is closely tied to the availability of rich item descriptions and features. Any inaccuracy or sparsity in item description will compromise the model.
 -  *Adaptability to Changing Preferences:* May not capture changing tastes over time as effectively as collaborative filtering.
 
-## Hybrid Models
+## 3. Hybrid Models
 Hybrid models combine collaborative and content-based filtering to provide more accurate and diverse recommendation and eliminate their individual weaknesses. While collaborative filtering tends to recommend popular items, content-based filtering introduces variety by focusing on item features thus enabling diversity in hybrid models. Hybrid models can handle cold start problems, where there is limited data for new users or items. Hybrid models also incorporate contextual information, such as time, location, or user behavior, to make more relevant and timely recommendations. This adaptability enhances the user experience in dynamic scenarios.
 <u><b>Types of Hybrid Models</u></b>
 
@@ -67,10 +65,9 @@ Hybrid models combine collaborative and content-based filtering to provide more 
 -  **Switching Hybrid Models:** Employ one method for certain scenarios or users and switch to another when necessary. The switch is based on predefined conditions or user characteristics.
 
 -  **Feature Combination Hybrid Models:** Merge features from both collaborative and content-based methods to create a unified representation of items or users.
-
   
 
-## Deep Learning Models
+## 4. Deep Learning Models
 Neural networks and deep learning techniques have been increasingly applied to recommendation systems. These models can learn intricate patterns and relationships in large datasets, enhancing the quality of recommendations.
 
   
